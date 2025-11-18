@@ -83,88 +83,102 @@
     <!-- Swiper Slider -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
-
         <div class="swiper-slide">
           <a href="assets/img/gallery/1.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/1.jpg" alt="Spa Room" />
+            <img src="assets/img/gallery/1.jpg" alt="Spa Room" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/2.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/2.jpg" alt="Massage Therapy" />
+            <img src="assets/img/gallery/2.jpg" alt="Massage Therapy" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/3.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/5.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/5.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/5.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/6.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/6.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/6.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/7.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/7.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/7.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/9.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/9.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/9.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/12.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/12.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/12.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/17.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/17.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/17.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/18.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/18.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/18.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/19.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/19.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/19.jpg" alt="Relaxing Setup" />
           </a>
         </div>
         <div class="swiper-slide">
           <a href="assets/img/gallery/26.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/26.jpg" alt="Relaxing Setup" />
+            <img src="assets/img/gallery/26.jpg" alt="Relaxing Setup" />
           </a>
         </div>
-
       </div>
 
       <!-- Navigation -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-
     </div>
   </div>
 </section>
+
+<style>
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; /* semua slide sama tinggi */
+}
+
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop gambar agar semua sama saiz */
+  border-radius: 10px;
+}
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
-  // Swiper settings
+  // Swiper slider dengan autoHeight
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1.5,
     spaceBetween: 15,
     centeredSlides: true,
     loop: true,
+    autoHeight: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -184,7 +198,7 @@
   });
 </script>
 
-
+<!-- ===== GALLERY SECTION END ===== -->
 
 <!-- About -->
 <section class="page-section" id="about">
