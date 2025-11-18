@@ -68,6 +68,9 @@
   </div>
 </section>
 
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 <!-- Gallery -->
 <section class="page-section bg-light" id="gallery">
   <div class="container">
@@ -75,13 +78,68 @@
       <h2 class="section-heading text-uppercase">Gallery</h2>
       <p class="section-subheading text-muted">A glimpse of our spa atmosphere</p>
     </div>
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 mb-4"><img class="img-fluid rounded" src="assets/img/gallery/1.jpg" alt="Spa Room" /></div>
-      <div class="col-lg-4 col-sm-6 mb-4"><img class="img-fluid rounded" src="assets/img/gallery/2.jpg" alt="Massage Therapy" /></div>
-      <div class="col-lg-4 col-sm-6 mb-4"><img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" /></div>
+
+    <!-- Swiper Slider -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img class="img-fluid rounded gallery-img" src="assets/img/gallery/1.jpg" alt="Spa Room" />
+        </div>
+        <div class="swiper-slide">
+          <img class="img-fluid rounded gallery-img" src="assets/img/gallery/2.jpg" alt="Massage Therapy" />
+        </div>
+        <div class="swiper-slide">
+          <img class="img-fluid rounded gallery-img" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
+        </div>
+      </div>
+
+      <!-- Navigation arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
+
   </div>
 </section>
+
+<!-- Modal for Enlarged Image -->
+<div class="modal fade" id="imageModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-transparent border-0">
+      <img id="modalImg" class="img-fluid rounded" />
+    </div>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  // Init Swiper
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.2,
+    spaceBetween: 15,
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: { slidesPerView: 2.5 },
+      992: { slidesPerView: 3 } 
+    }
+  });
+
+  // Image click → open modal
+  document.querySelectorAll(".gallery-img").forEach(img => {
+    img.addEventListener("click", function() {
+      document.getElementById("modalImg").src = this.src;
+      let modal = new bootstrap.Modal(document.getElementById("imageModal"));
+      modal.show();
+    });
+  });
+</script>
+
 
 <!-- About -->
 <section class="page-section" id="about">
