@@ -152,9 +152,9 @@
 
     allowedImages.forEach(img => {
         const imageElement = document.createElement("img");
-        imageElement.src = `gallery/${img}`;
+        imageElement.src = `assets/img/gallery/${img}`;
         imageElement.alt = img;
-        imageElement.onclick = () => openModal(`gallery/${img}`);
+        imageElement.onclick = () => openModal(`assets/img/gallery/${img}`);
         galleryDiv.appendChild(imageElement);
     });
 
@@ -172,6 +172,7 @@
 </script>
 
 <!-- ===== GALLERY SECTION END ===== -->
+
 
 <!-- About -->
 <section class="page-section" id="about">
