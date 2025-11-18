@@ -68,10 +68,14 @@
   </div>
 </section>
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<!-- ========================== -->
+<!--   GALLERY SECTION FULL     -->
+<!-- ========================== -->
 
-<!-- Gallery -->
+<!-- Swiper + GLightbox CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
 <section class="page-section bg-light" id="gallery">
   <div class="container">
     <div class="text-center">
@@ -82,63 +86,67 @@
     <!-- Swiper Slider -->
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
+
         <div class="swiper-slide">
-          <img class="img-fluid rounded gallery-img" src="assets/img/gallery/1.jpg" alt="Spa Room" />
+          <a href="assets/img/gallery/1.jpg" class="glightbox" data-gallery="spa">
+            <img class="img-fluid rounded" src="assets/img/gallery/1.jpg" alt="Spa Room" />
+          </a>
         </div>
+
         <div class="swiper-slide">
-          <img class="img-fluid rounded gallery-img" src="assets/img/gallery/2.jpg" alt="Massage Therapy" />
+          <a href="assets/img/gallery/2.jpg" class="glightbox" data-gallery="spa">
+            <img class="img-fluid rounded" src="assets/img/gallery/2.jpg" alt="Massage Therapy" />
+          </a>
         </div>
+
         <div class="swiper-slide">
-          <img class="img-fluid rounded gallery-img" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
+          <a href="assets/img/gallery/3.jpg" class="glightbox" data-gallery="spa">
+            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
+          </a>
         </div>
+
       </div>
 
       <!-- Navigation arrows -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
+
     </div>
 
   </div>
 </section>
 
-<!-- Modal for Enlarged Image -->
-<div class="modal fade" id="imageModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-transparent border-0">
-      <img id="modalImg" class="img-fluid rounded" />
-    </div>
-  </div>
-</div>
-
-<!-- Swiper JS -->
+<!-- Swiper + GLightbox JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
-  // Init Swiper
+  // Swiper Slider Settings
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1.2,
     spaceBetween: 15,
     centeredSlides: true,
-    loop: true,
+    loop: false,   // no warnings
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
       768: { slidesPerView: 2.5 },
-      992: { slidesPerView: 3 } 
+      992: { slidesPerView: 3 }
     }
   });
 
-  // Image click → open modal
-  document.querySelectorAll(".gallery-img").forEach(img => {
-    img.addEventListener("click", function() {
-      document.getElementById("modalImg").src = this.src;
-      let modal = new bootstrap.Modal(document.getElementById("imageModal"));
-      modal.show();
-    });
+  // Fullscreen Lightbox
+  const lightbox = GLightbox({
+    selector: ".glightbox",
+    loop: true,
+    zoomable: true,
+    touchNavigation: true,
+    autoplayVideos: false,
   });
 </script>
+
 
 
 <!-- About -->
