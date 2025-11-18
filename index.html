@@ -153,17 +153,30 @@
 </section>
 
 <style>
-.mySwiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px; /* semua slide sama tinggi */
+/* Desktop / tablet */
+@media (min-width: 768px) {
+  .mySwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* desktop/iPad tinggi tetap */
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .mySwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px; /* semua slide sama tinggi di mobile */
+  }
 }
 
 .mySwiper .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* crop gambar agar semua sama saiz */
+  object-fit: cover; /* crop gambar agar rata */
   border-radius: 10px;
 }
 </style>
@@ -172,13 +185,13 @@
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
 <script>
-  // Swiper slider dengan autoHeight
+  // Swiper slider dengan autoHeight hanya untuk desktop/tablet
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1.5,
     spaceBetween: 15,
     centeredSlides: true,
     loop: true,
-    autoHeight: true,
+    autoHeight: window.innerWidth >= 768, // desktop/iPad only
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -199,6 +212,7 @@
 </script>
 
 <!-- ===== GALLERY SECTION END ===== -->
+
 
 <!-- About -->
 <section class="page-section" id="about">
