@@ -68,146 +68,110 @@
   </div>
 </section>
 
-<!-- ========================== -->
-<!--   GALLERY SECTION FULL     -->
-<!-- ========================== -->
+<!-- ===== GALLERY SECTION START ===== -->
 
-<!-- Swiper + GLightbox CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+<style>
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 15px;
+        padding: 10px 0;
+    }
 
-<section class="page-section bg-light" id="gallery">
-  <div class="container">
-    <div class="text-center">
-      <h2 class="section-heading text-uppercase">Gallery</h2>
-      <p class="section-subheading text-muted">A glimpse of our spa atmosphere</p>
-    </div>
+    .gallery-grid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: transform 0.2s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
 
-    <!-- Swiper Slider -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
+    .gallery-grid img:hover {
+        transform: scale(1.03);
+    }
 
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/1.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/1.jpg" alt="Spa Room" />
-          </a>
-        </div>
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.85);
+        justify-content: center;
+        align-items: center;
+    }
 
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/2.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/2.jpg" alt="Massage Therapy" />
-          </a>
-        </div>
+    .modal img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+    }
 
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/3.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
+    .close-btn {
+        position: fixed;
+        top: 30px;
+        right: 40px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        user-select: none;
+    }
+</style>
 
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/5.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
+<h2 class="text-center">Image Gallery</h2>
 
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/5.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/6.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/7.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/9.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/12.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/17.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/18.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/19.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-        <div class="swiper-slide">
-          <a href="assets/img/gallery/26.jpg" class="glightbox" data-gallery="spa">
-            <img class="img-fluid rounded" src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
-          </a>
-        </div>
-       
-      </div>
+<div class="gallery-grid" id="gallery"></div>
 
-      <!-- Navigation arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- Swiper + GLightbox JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<!-- Modal -->
+<div class="modal" id="modal">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <img id="modalImg" src="">
+</div>
 
 <script>
-  // Swiper Slider Settings
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1.2,
-    spaceBetween: 15,
-    centeredSlides: true,
-    loop: false,   // no warnings
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      768: { slidesPerView: 2.5 },
-      992: { slidesPerView: 3 }
-    }
-  });
+    // Hanya gambar yang kau mahu paparkan
+    const allowedImages = [
+        "1.jpg",
+        "2.jpg",
+        "3.jpg",
+        "5.jpg",
+        "6.jpg",
+        "7.jpg",
+        "9.jpg",
+        "12.jpg",
+        "17.jpg",
+        "18.jpg",
+        "19.jpg",
+        "26.jpg"
+    ];
 
-  // Fullscreen Lightbox
-  const lightbox = GLightbox({
-    selector: ".glightbox",
-    loop: true,
-    zoomable: true,
-    touchNavigation: true,
-    autoplayVideos: false,
-  });
+    const galleryDiv = document.getElementById("gallery");
+
+    allowedImages.forEach(img => {
+        const imageElement = document.createElement("img");
+        imageElement.src = `gallery/${img}`;
+        imageElement.alt = img;
+        imageElement.onclick = () => openModal(`gallery/${img}`);
+        galleryDiv.appendChild(imageElement);
+    });
+
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const closeBtn = document.getElementById("closeBtn");
+
+    function openModal(src) {
+        modal.style.display = "flex";
+        modalImg.src = src;
+    }
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 </script>
 
-
+<!-- ===== GALLERY SECTION END ===== -->
 
 <!-- About -->
 <section class="page-section" id="about">
