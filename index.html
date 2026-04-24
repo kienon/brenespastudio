@@ -4,35 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Brene Spa Studio</title>
-
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"></script>
-
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" />
   <link href="css/styles.css" rel="stylesheet" />
-
-  <!-- FLOATING BUTTON STYLE -->
-  <style>
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-  </style>
 </head>
-
 <body id="page-top">
-
 <!-- FLOATING WHATSAPP -->
 <a id="whatsappFloat"
    href="https://wa.me/60123456789?text=Hi%20Brene%20Spa%20Studio%2C%20saya%20ingin%20buat%20tempahan%20😊"
@@ -40,7 +18,7 @@
    class="btn btn-success whatsapp-float">
    <i class="fab fa-whatsapp"></i>
 </a>
-
+  
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
   <div class="container">
@@ -71,59 +49,255 @@
 
 <!-- Services -->
 <section class="page-section" id="services">
-  <div class="container text-center">
-    <h2 class="section-heading text-uppercase">Our Services</h2>
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Our Services</h2>
+      <p class="section-subheading text-muted">Tailored treatments to relax, heal and rejuvenate</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-spa fa-stack-1x fa-inverse"></i></span>
+        <h4 class="my-3">Hair Treatment</h4>
+        <p class="text-muted">Deep care to nourish, strengthen and revitalise your hair naturally.</p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-leaf fa-stack-1x fa-inverse"></i></span>
+        <h4 class="my-3">Scalp Treatment</h4>
+        <p class="text-muted">Destress, detoxify, revitalise, rebalance, soothe & purify your scalp.</p>
+        <a href="#scalpModal" class="btn btn-sm btn-outline-primary mt-2" data-bs-toggle="modal">Learn More</a>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x"><i class="fas fa-circle fa-stack-2x text-primary"></i><i class="fas fa-hands fa-stack-1x fa-inverse"></i></span>
+        <h4 class="my-3">Therapical Massage</h4>
+        <p class="text-muted">Relieve stress and tension with our signature healing massage sessions.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Gallery (unchanged) -->
+<!-- ===== GALLERY SECTION START ===== -->
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
 <section class="page-section bg-light" id="gallery">
-  <div class="container text-center">
-    <h2 class="section-heading text-uppercase">Gallery</h2>
+  <div class="container">
+    <div class="text-center">
+      <h2 class="section-heading text-uppercase">Gallery</h2>
+      <p class="section-subheading text-muted">A glimpse of our spa atmosphere</p>
+    </div>
+
+    <!-- Swiper Slider -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/1.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/1.jpg" alt="Spa Room" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/2.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/2.jpg" alt="Massage Therapy" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/3.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/3.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/5.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/5.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/6.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/6.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/7.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/7.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/9.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/9.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/12.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/12.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/17.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/17.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/18.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/18.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/19.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/19.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+        <div class="swiper-slide">
+          <a href="assets/img/gallery/26.jpg" class="glightbox" data-gallery="spa">
+            <img src="assets/img/gallery/26.jpg" alt="Relaxing Setup" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
   </div>
 </section>
+
+<style>
+/* Desktop / tablet */
+@media (min-width: 768px) {
+  .mySwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* desktop/iPad tinggi tetap */
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .mySwiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px; /* semua slide sama tinggi di mobile */
+  }
+}
+
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop gambar agar rata */
+  border-radius: 10px;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+  // Swiper slider dengan autoHeight hanya untuk desktop/tablet
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 15,
+    centeredSlides: true,
+    loop: true,
+    autoHeight: window.innerWidth >= 768, // desktop/iPad only
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: { slidesPerView: 2.5 },
+      992: { slidesPerView: 3 }
+    }
+  });
+
+  // GLightbox
+  const lightbox = GLightbox({
+    selector: ".glightbox",
+    loop: true,
+    zoomable: true,
+    touchNavigation: true
+  });
+</script>
+
+<!-- ===== GALLERY SECTION END ===== -->
+
 
 <!-- About -->
 <section class="page-section" id="about">
   <div class="container text-center">
     <h2 class="section-heading text-uppercase">About Us</h2>
+    <p class="text-muted mx-auto" style="max-width:700px;">
+      Brene Spa Studio is a mini spa dedicated to providing a sanctuary of calm. 
+      Our mission is to help people heal through carefully designed treatments — 
+      from scalp care to therapeutic massages — so you can look good, feel good, and live well.
+    </p>
   </div>
 </section>
 
 <!-- Contact -->
 <section class="page-section" id="contact">
-  <div class="container text-center">
-
-    <h2 class="section-heading text-uppercase">Find Us</h2>
-
-    <!-- MAP -->
-    <div class="ratio ratio-16x9 mb-4">
-      <iframe src="https://www.google.com/maps/embed?..." loading="lazy"></iframe>
+  <div class="container">
+    <div class="text-center mb-4">
+        <img src="assets/img/logos/logo.webp" alt="Brene Spa Studio" style="max-width: 150px; margin-bottom: 15px;">
+      <h2 class="section-heading text-uppercase">Find Us</h2>
+      <p class="section-subheading text-muted">Visit or chat with us for your booking</p>
+    </div>
+    <div class="row justify-content-center">
+      <!-- Google Map -->
+      <div class="col-lg-10 mb-4">
+        <div class="ratio ratio-16x9">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.663379716285!2d101.58118651535555!3d3.089006097750108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4daaaa:0xabcdef123456789!2sBrene%20Spa%20Studio!5e0!3m2!1sen!2smy!4v1694600000000"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
     </div>
 
-    <!-- IMPORTANT: ADD ID HERE -->
-    <a id="whatsappContactBtn"
-       href="https://wa.me/60196960299?text=Hi%20Brene%20Spa%20Studio%2C%20saya%20ingin%20buat%20tempahan%20😊"
-       target="_blank"
-       class="btn btn-success btn-xl text-uppercase">
-       <i class="fab fa-whatsapp me-2"></i> Chat & Book via WhatsApp
-    </a>
-
+    <!-- WhatsApp Button -->
+    <div class="text-center mt-4">
+      <a id="whatsappContactBtn" href="https://wa.me/0196960299?text=Hi%20Brene%20Spa%20Studio%2C%20saya%20ingin%20buat%20tempahan%20😊" 
+         target="_blank" 
+         class="btn btn-success btn-xl text-uppercase">
+        <i class="fab fa-whatsapp me-2"></i> Chat & Book via WhatsApp
+      </a>
+    </div>
   </div>
 </section>
 
+
 <!-- Footer -->
-<footer class="footer py-4 bg-dark text-light text-center">
-  <p>© 2025 Brene Spa Studio</p>
+<footer class="footer py-4 bg-dark text-light">
+  <div class="container text-center">
+    <p class="mb-1">© 2025 Brene Spa Studio. All Rights Reserved.</p>
+    <div>
+      <a class="btn btn-light btn-social mx-2" href="#"><i class="fab fa-facebook-f"></i></a>
+      <a class="btn btn-light btn-social mx-2" href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
 </footer>
 
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Modal Scalp Treatments -->
+<div class="modal fade" id="scalpModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-4">
+      <div class="modal-header border-0">
+        <h3 class="modal-title">Scalp Treatment Options</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li><strong>Detoxifying:</strong> Draining detox treatment to eliminate toxins.</li>
+          <li><strong>Revitalising:</strong> Prevent hair loss, improve circulation, boost keratin & growth phase.</li>
+          <li><strong>Rebalancing:</strong> Anti-stress for oily scalp; reduces dandruff & skin tension.</li>
+          <li><strong>Soothing:</strong> Eliminates itching/redness; eases scalp pain & tension.</li>
+          <li><strong>Purifying:</strong> Intensive anti-dandruff, balances scalp bacterial flora.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script>
+  <script>
 document.addEventListener("DOMContentLoaded", function () {
 
     const floatBtn = document.getElementById("whatsappFloat");
@@ -151,5 +325,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
